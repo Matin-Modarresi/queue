@@ -17,9 +17,9 @@ class Point{
 class c
 {
 	public:
-		 int operator() (const Point& p1 , const Point& p2)
+		 bool operator()(const Point& p1 , const Point& p2)
 		  {
-		  	return p1.getX() > p2.getX() && p2.getX()%2 == 0 ;
+		  	return p2.getX() < p1.getX() && p2.getX()%2 == 0 ;
 		  }
 };
 
@@ -34,6 +34,8 @@ int main()
 	pq.push(Point(2,50));
 	pq.push(Point(4,60));
 	
+
+	
 	while (!pq.empty())
 	{
 		Point t = pq.top();
@@ -41,5 +43,13 @@ int main()
 		pq.pop();
 	}
 	
+/*
+2  ,  50
+1  ,  30
+4  ,  60
+4  ,  20
+3  ,  10
+5  ,  40
+*/
 	
 }
